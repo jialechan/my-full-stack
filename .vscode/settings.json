@@ -1,0 +1,16 @@
+{
+  // 保存自动格式化代码
+  "editor.formatOnSave": true,
+  // 默认格式化器
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // ESLint开启
+  "eslint.enable": true,
+  // 保存的时候直接fix问题
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "json.schemaDownload.enable": true
+  // ESLint server输出更多日志
+  // "eslint.trace.server": "verbose",
+}

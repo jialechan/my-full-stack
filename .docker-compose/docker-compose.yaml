@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mysql:
+    image: arm64v8/mysql:oracle
+    container_name: my-local-mysql
+    volumes:
+      # 数据库配置，避免乱码
+      - ./mysql_config/my.cnf:/etc/my.cnf
+      # 初始化数据库的sql
+      - ./mysql_config/db_init.sql:/docker-entrypoint-initdb.d/db_init.sql
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=123456'
+      - 'TZ=Asia/Shanghai'
+    ports:
+      - '3306:3306'
+  redis:
+    image: redis
+    container_name: my-local-redis
+    ports:
+      - '6379:6379'
